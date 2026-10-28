@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What does my browser reveal?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="lang-switch" role="group" aria-label="Language / Sprache">
+      <button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
+      <button type="button" data-lang="en" aria-pressed="true">English</button>
+    </div>
+
+    <h1 data-i18n="h1">What does my browser reveal?</h1>
+    <p data-i18n="intro">All the information your browser and device reveal (or can reveal) to websites while you surf. Everything is evaluated locally in your browser – nothing is stored or sent.</p>
+    <div class="actions">
+      <button id="btn-ip" class="primary">Look up IP address &amp; location</button>
+      <button id="btn-refresh" data-i18n="btnRefresh">Refresh</button>
+      <button id="btn-copy">Copy as JSON</button>
+      <button id="btn-download" data-i18n="btnDownload">Download JSON</button>
+    </div>
+    <p class="hint" data-i18n="tip">Tip: Hover over an underlined entry (on a phone: tap it) to see an explanation.</p>
+    <p class="hint" id="ip-hint" data-i18n="ipHint">Note: Only a server can know your public IP address. Clicking the button queries an external service (ipify.org / ipapi.co), which will see your IP.</p>
+  </header>
+
+  <input type="search" id="filter" data-i18n-ph="filterPh" placeholder="Filter entries …" aria-label="Filter">
+
+  <main id="output" aria-live="polite">
+    <p class="loading" data-i18n="loading">Collecting information …</p>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">All values come from standard browser APIs. Some browsers (Firefox, Brave, Safari, Tor) deliberately block or falsify certain values.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
